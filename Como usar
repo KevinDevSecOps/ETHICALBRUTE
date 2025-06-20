@@ -1,0 +1,13 @@
+from core.protocols.http import HTTPBruter
+from core.bruter import Bruter
+
+target = HTTPBruter(
+    url="https://test.com/login",
+    data_payload={"username": "{user}", "password": "{pass}"}
+)
+
+bruter = Bruter(target, threads=5)
+bruter.run([
+    {"user": "admin", "pass": "password123"},
+    {"user": "root", "pass": "toor"}
+])
