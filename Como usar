@@ -11,3 +11,13 @@ bruter.run([
     {"user": "admin", "pass": "password123"},
     {"user": "root", "pass": "toor"}
 ])
+# 📖 Cómo Usar ETHICALBRUTE (Guía Completa)
+
+## 🔍 Requisitos
+- Python 3.10+
+- Librerías: `pip install -r requirements.txt`
+- Wordlists (opcional): Descarga `rockyou.txt` o crea la tuya.
+
+## 🚀 Ejecución Básica
+```bash
+python3 ETHICALBRUTE.py -t http://target.com/login -u admin -w wordlist.txt
