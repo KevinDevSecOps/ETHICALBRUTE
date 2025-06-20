@@ -1,0 +1,7 @@
+## ❓ Preguntas Frecuentes
+### ➤ Error: "Connection refused"
+- Verifica que el target esté online.
+- Usa `-p 8080` si el puerto no es el default.
+
+### ➤ Error: "Too many requests"
+- Añade `--delay 5` para reducir peticiones/sec.
