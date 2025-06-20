@@ -1,102 +1,131 @@
-# 🔐 EthicalBrute - Framework de Fuerza Bruta Ético
+# **🔥 ETHICALBRUTE PRO - Herramienta Ética de Fuerza Bruta**  
+**by [KevinDevSecOps](https://github.com/KevinDevSecOps) ❤️**  
 
-[![License](https://img.shields.io/badge/License-GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-yellowgreen)](https://www.python.org/)
-[![Tests](https://github.com/KevinDevSecOps/EthicalBrute/actions/workflows/tests.yml/badge.svg)](https://github.com/KevinDevSecOps/EthicalBrute/actions)
-
-**Herramienta educativa para pruebas de resistencia controladas** con protecciones integradas contra uso malintencionado. Diseñada para pentesters, auditores y estudiantes de ciberseguridad.
-
-```bash
-# Instalación rápida
-pip install git+https://github.com/KevinDevSecOps/EthicalBrute.git
-
-# Demo con sitio de prueba autorizado
-ethicalbrute demo --target http://testphp.vulnweb.com/
-```
-
-## 🌟 ¿Por qué EthicalBrute?
-| Característica               | Beneficio                                                                 |
-|------------------------------|---------------------------------------------------------------------------|
-| 🔒 **Whitelist integrada**    | Solo objetivos autorizados (nunca sitios reales)                          |
-| ⏱️ **Límites automáticos**   | Delay entre intentos + máximo de peticiones                               |
-| 📜 **Cumple con OSCP/EJPT**  | Ideal para preparar certificaciones éticas                                |
-| 🛡️ **Hashing SHA-256**       | Nunca envía contraseñas en claro                                         |
-
-## 🛠️ Módulos Principales
-```python
-from ethicalbrute import EthicalBrute
-
-# 1. Fuerza bruta HTTP básica
-tool = EthicalBrute("http://localhost:8080/")
-tool.brute_force_login("admin", ["password", "123456"])
-
-# 2. Generador de wordlists seguras
-from ethicalbrute.wordlists import generate_wordlist
-words = generate_wordlist(base_words=["admin", "sysadmin"], max_length=8)
-```
-
-## 📂 Estructura del Proyecto
-```
-ethicalbrute/
-├── core/               # Lógica principal
-│   ├── brute.py        # Ataques controlados
-│   └── safety.py       # Validaciones
-├── wordlists/          # Diccionarios de prueba
-│   ├── top_100.txt     # Contraseñas comunes
-│   └── custom/         # Wordlists personalizadas
-└── tests/              # Pruebas unitarias
-    ├── test_brute.py
-    └── test_safety.py
-```
-
-## 🚀 Primeros Pasos
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/KevinDevSecOps/EthicalBrute.git
-   cd EthicalBrute
-   ```
-
-2. **Configura entorno virtual**:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/macOS
-   venv\Scripts\activate     # Windows
-   pip install -e .
-   ```
-
-3. **Ejecuta demo educativa**:
-   ```bash
-   ethicalbrute demo --learn
-   ```
-
-## 📌 Casos de Uso Válidos
-- 🎓 **Enseñanza**: Demostrar importancia de contraseñas seguras
-- 🔍 **Pentesting**: Pruebas en entornos controlados con permiso
-- 🛡️ **Autoauditorías**: Verificar resistencia de tus propios sistemas
-
-## ⚠️ Restricciones Éticas
-- ✖️ **No funciona** en dominios fuera de la whitelist
-- ✖️ **Requiere confirmación** para >50 intentos
-- ✖️ **Incluye delays** configurables (mínimo 1.5 segundos)
-
-## 🤝 ¿Cómo Contribuir?
-1. Haz fork del proyecto
-2. Crea una rama (`git checkout -b feature/nueva-funcion`)
-3. Envía tu PR con:
-   - Tests actualizados
-   - Documentación clara
-
-```bash
-# Ejecuta tests antes de contribuir
-pytest -v tests/ --cov=core/
-```
-
-## 📜 Licencia
-GNU GPLv3 - [Ver licencia completa](LICENSE)
-
-> **Warning**  
-> **Ético ≠ Ilegal**: Este software solo debe usarse con permiso explícito por escrito. Los desarrolladores no asumen responsabilidad por mal uso.
+**"El conocimiento es poder, pero la ética es nuestra brújula."**  
 
 ---
 
-Hecho con ❤️ por [@KevinDevSecOps](https://github.com/KevinDevSecOps) | [☕ Invítame un café](https://www.buymeacoffee.com/kevindevsecops
+## **🔍 Descripción**  
+**ETHICALBRUTE PRO** es una herramienta avanzada de *fuerza bruta ética* diseñada para **pentesters profesionales**, **equipos Red Team** y **entusiastas de la ciberseguridad** que buscan probar la resistencia de sistemas **con autorización previa**.  
+
+🚀 **Perfecta para**:  
+- Pruebas de penetración autorizadas (OSCP, CEH, EJPT).  
+- Auditorías de seguridad en entornos controlados.  
+- CTFs y laboratorios de hacking ético.  
+
+⚠️ **ADVERTENCIA**:  
+```diff
+- SOLO USO LEGAL: Esta herramienta debe utilizarse ÚNICAMENTE en sistemas con permiso explícito.  
+- El uso no autorizado es ILEGAL y está prohibido.  
+```
+
+---
+
+## **✨ Características Principales**  
+
+| **Módulo**               | **Tecnología**            | **Uso**                                   |  
+|--------------------------|---------------------------|------------------------------------------|  
+| **🔐 SSH Brute Force**    | Paramiko + Multihilo      | Ataque a credenciales SSH con soporte para keys. |  
+| **🌐 HTTP/API Brute**     | Requests + Rotación de IP | Fuerza bruta en formularios web y APIs REST. |  
+| **💾 Hash Cracking**      | PyCryptoDome + John       | Descifrado ético de hashes (MD5, SHA1, NTLM). |  
+| **🛡️ WAF Bypass**        | User-Agents + Delays      | Evasión básica de Cloudflare/Akamai.     |  
+| **📊 Burp Suite Integration** | Python-Burp-API       | Exportar resultados a Burp para análisis. |  
+
+---
+
+## **⚙️ Instalación**  
+
+### **Requisitos**  
+- Python 3.10+  
+- Git  
+- `sudo apt install john hashcat` (Para crackeo de hashes)  
+
+### **Pasos**  
+```bash
+git clone https://github.com/KevinDevSecOps/ETHICALBRUTE.git  
+cd ETHICALBRUTE  
+pip install -r requirements-pro.txt  
+```  
+
+---
+
+## **🚀 Uso Básico**  
+
+### **1. Fuerza Bruta SSH**  
+```python
+from core.ssh_bruter import SSHAuditor  
+from core.bruter import Bruter  
+
+target = SSHAuditor("192.168.1.100")  
+bruter = Bruter(target.test_credentials, threads=5)  
+
+creds = [  
+    {"username": "admin", "password": "P@ssw0rd!"},  
+    {"username": "root", "password": "toor"}  
+]  
+
+bruter.run(creds)  
+```  
+
+### **2. Crackeo de Hashes**  
+```bash
+python3 core/hash_cracker.py -h md5 -f hashes.txt -w wordlists/rockyou.txt  
+```  
+
+### **3. Exportar a Burp Suite**  
+```python
+from burp import IBurpExtender  
+from core.http import HTTPBruter  
+
+class BurpExporter(IBurpExtender):  
+    def registerExtenderCallbacks(self, callbacks):  
+        self.callbacks = callbacks  
+        bruter = HTTPBruter("https://target.com/login")  
+        results = bruter.run_scan()  
+        self.callbacks.issueAlert(f"¡Credenciales encontradas: {len(results)}!")  
+```  
+
+---
+
+## **📌 Ejemplo de Uso en CTF**  
+```bash
+# Escaneo SSH con wordlist personalizada  
+python3 main.py --ssh --target 10.10.10.5 --user admin --wordlist passwords.txt  
+
+# Crackeo de hashes MD5  
+python3 main.py --hash md5 --hash-file hashes.txt --wordlist rockyou.txt  
+```  
+
+---
+
+## **❤️ Contribuir**  
+¡Tus aportes son bienvenidos! Sigue estos pasos:  
+1. Haz fork del proyecto.  
+2. Crea una rama: `git checkout -b feature/nueva-funcion`.  
+3. Haz commit: `git commit -m "feat: Añadí soporte para X"`.  
+4. Haz push: `git push origin feature/nueva-funcion`.  
+5. Abre un **Pull Request**.  
+
+---
+
+## **📜 Licencia**  
+**MIT License** - Copyright © 2023 [KevinDevSecOps](https://github.com/KevinDevSecOps).  
+```diff
++ Ética ante todo. Usa este conocimiento para proteger, no para dañar.  
+```  
+
+---
+
+## **📞 Contacto**  
+- **Twitter**: [@KevinDevSecOps](https://twitter.com/KevinDevSecOps)  
+- **Email**: ethicalhacker@protonmail.com  
+
+---
+
+```python
+# Código con ❤️ para hackers éticos.  
+while ethics == True:  
+    print("Hack the Planet (Responsibly!)")  
+```  
+
+**⭐ ¿Te gusta el proyecto? Dale una estrella en [GitHub](https://github.com/KevinDevSecOps/ETHICALBRUTE)!**
