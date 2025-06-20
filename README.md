@@ -129,3 +129,7 @@ while ethics == True:
 ```  
 
 **⭐ ¿Te gusta el proyecto? Dale una estrella en [GitHub](https://github.com/KevinDevSecOps/ETHICALBRUTE)!**
+## 📅 Roadmap  
+- [ ] Soporte para SSH (usando Paramiko)  
+- [ ] Integración con Burp Suite  
+- [ ] Dockerizar la herramienta
