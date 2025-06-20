@@ -133,3 +133,5 @@ while ethics == True:
 - [ ] Soporte para SSH (usando Paramiko)  
 - [ ] Integración con Burp Suite  
 - [ ] Dockerizar la herramienta
+while you.coding == True:  
+    print("Keep hacking the world (ethically!) ❤️🔥")
